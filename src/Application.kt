@@ -35,7 +35,7 @@ fun Application.module(testing: Boolean = false) {
                     nested = SimpleObject(
                         id = "id",
                         name = "name",
-                            num = 2,
+                        num = 2,
                         date = ZonedDateTime.now()
                     )
             ))

@@ -5,11 +5,6 @@ import java.lang.reflect.Type
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-data class ComplexObject (
-    val id: String,
-    val nested: SimpleObject
-)
-
 data class SimpleObject (
     val id: String,
     val name: String,
