@@ -12,9 +12,8 @@ data class SimpleObject (
     val date: ZonedDateTime
 )
 
-class MyTimeAdapter : JsonSerializer<ZonedDateTime> {
+class TimeAdapter : JsonSerializer<ZonedDateTime> {
     override fun serialize(time: ZonedDateTime?, type: Type?, ctx: JsonSerializationContext?): JsonElement {
         return JsonPrimitive(time?.format(DateTimeFormatter.ISO_ZONED_DATE_TIME))
     }
-
 }

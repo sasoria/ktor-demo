@@ -15,7 +15,7 @@ fun Application.module(testing: Boolean = false) {
     install(ContentNegotiation) {
         gson {
             setPrettyPrinting()
-            registerTypeAdapter(ZonedDateTime::class.java, MyTimeAdapter())
+            registerTypeAdapter(ZonedDateTime::class.java, TimeAdapter())
         }
     }
 
