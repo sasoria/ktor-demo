@@ -20,7 +20,7 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
-        get("/") {
+        get("/api/simple") {
             call.respond(SimpleObject(
                     id = "id",
                     name = "name",
@@ -29,7 +29,7 @@ fun Application.module(testing: Boolean = false) {
             ))
         }
 
-        get("/complex") {
+        get("/api/complex") {
             call.respond(ComplexObject(
                     id = "id",
                     nested = SimpleObject(
