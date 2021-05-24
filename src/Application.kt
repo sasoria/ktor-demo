@@ -1,10 +1,10 @@
 package saoria.ktor.demo
 
 import io.ktor.application.*
-import io.ktor.response.*
 import io.ktor.features.*
 import io.ktor.gson.*
 import io.ktor.routing.*
+import saoria.ktor.demo.model.TimeAdapter
 import java.time.ZonedDateTime
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
@@ -20,26 +20,8 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
-        get("/api/simple") {
-            call.respond(SimpleObject(
-                    id = "id",
-                    name = "name",
-                    num = 2,
-                    date = ZonedDateTime.now()
-            ))
-        }
-
-        get("/api/complex") {
-            call.respond(ComplexObject(
-                    id = "id",
-                    nested = SimpleObject(
-                        id = "id",
-                        name = "name",
-                        num = 2,
-                        date = ZonedDateTime.now()
-                    )
-            ))
-        }
+        registerSimpleRoute()
+        registerComplexRoute()
     }
 }
 
