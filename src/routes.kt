@@ -8,14 +8,14 @@ import saoria.ktor.demo.model.SimpleObject
 import java.time.ZonedDateTime
 
 fun Route.registerSimpleRoute() {
-    get ("/api/simple") {
+    get("/api/simple") {
         call.respond(
             SimpleObject(
-            id = "id",
-            name = "name",
-            num = 2,
-            date = ZonedDateTime.now()
-        )
+                id = "id",
+                name = "name",
+                num = 2,
+                date = ZonedDateTime.now()
+            )
         )
     }
 }

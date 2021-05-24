@@ -5,7 +5,7 @@ import java.lang.reflect.Type
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-data class SimpleObject (
+data class SimpleObject(
     val id: String,
     val name: String,
     val num: Int,
