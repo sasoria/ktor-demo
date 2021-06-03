@@ -22,6 +22,7 @@ fun Application.module(testing: Boolean = false) {
     routing {
         registerSimpleRoute()
         registerComplexRoute()
+        registerHtmlRoute()
     }
 }
 
