@@ -39,19 +39,28 @@ fun Route.registerComplexRoute() {
 }
 
 fun Route.registerHtmlRoute() {
-    get("/api/html") {
-        val title = "title"
-        val text = "text"
+    get("/api/pdf") {
+        val title = "PDF"
+        val pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
 
         call.respondHtml {
+            attributes["lang"] = "no"
+            attributes["style"] = "height: 100%;"
+
             head {
                 title {
                     +title
                 }
             }
+
             body {
-                h1 {
-                    +"Hello this is $text!"
+                attributes["style"] = "height: 100%; margin: 0px;"
+
+                iframe {
+                    attributes["src"] = pdfUrl
+                    attributes["frameborder"] = "0"
+                    attributes["height"] = "100%"
+                    attributes["width"] = "100%"
                 }
             }
         }
