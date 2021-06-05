@@ -38,7 +38,7 @@ fun Route.registerComplexRoute() {
     }
 }
 
-fun Route.registerHtmlRoute() {
+fun Route.registerPdfRoute() {
     get("/api/pdf") {
         val pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
 
